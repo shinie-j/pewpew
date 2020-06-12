@@ -44,11 +44,17 @@ void setup() {
   objects = new ArrayList<GameObject>();
   myPlayer = new Player();
   objects.add(myPlayer);
+  int i=0;
+  while(i < 100){
+    objects.add(new Obstacle());
+    i++;
+  }
 }
 
 //##################################### DRAW ################################################
 
 void draw() {
+  println(objects.size());
   if      (mode == INTRO)    intro();
   else if (mode == GAME)     game();
   else if (mode == PAUSE)    pause();
